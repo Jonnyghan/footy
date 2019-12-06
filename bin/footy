@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
-require './lib/footy'
+
+require "bundler/setup"
+require "footy"
 
 
 Footy::CLI.new.call
