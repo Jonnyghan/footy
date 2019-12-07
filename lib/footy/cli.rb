@@ -9,10 +9,10 @@ class Footy::CLI
   end
   
   def list_leagues
-    puts "Big Three Football/Soccer Standings!"
+    puts "Big Three Football/Soccer League Top Clubs!!"
    @standings = Footy::Standings.today
    @standings.each.with_index(1) do |league, i|
-     puts "#{i} - #{league.name}"
+     puts "#{i}) #{league.country}: #{league.name}"
    end 
   end
   
@@ -23,7 +23,7 @@ class Footy::CLI
     input = gets.strip.downcase
     if input.to_i > 0
     the_league = @standings[input.to_i-1]
-      puts "#{the_league.name} - #{the_league.table}"
+      puts "#{the_league.name} - #{the_league.top_team}!"
     elsif input == "list"
       list_leagues
     else 
@@ -33,7 +33,7 @@ class Footy::CLI
   end
   
   def goodbye
-    puts "Bye!, Adios!, Auf Weidersehen!, Au Revoir!, Ciao!"
+    puts "Bye!, Adios!, Auf Weidersehen!"
   end
   
 end
