@@ -4,21 +4,18 @@ class Footy::Standings
    
     uk_standings = self.new 
     uk_standings.name = "Premier League Standings"
-    uk_standings.table =  "Table"
     uk_standings.top_team = "Liverpool"
-    uk_standings.bottom_team = "Watford"
+    uk_standings.next_match = ""
     uk_standings.url = "https://www.premierleague.com/tables"
     
     sp_standings = self.new 
     sp_standings.name = "La Liga Standings"
-    sp_standings.table =  "Table"
     sp_standings.top_team = "Barcelona"
     sp_standings.bottom_team = "Gijon"
     sp_standings.url = "https://www.laliga.com/en-US/laliga-santander/classification"
     
     ger_standings = self.new 
     ger_standings.name = "Bundesliga.1 Standings"
-    ger_standings.table =  "Table"
     ger_standings.top_team = "Bayern Munchen"
     ger_standings.bottom_team = "Paderborn"
     ger_standings.url = "https://www.bundesliga.com/en/bundesliga/table"
@@ -29,8 +26,16 @@ class Footy::Standings
   end
   
   
-  def scrape_prem
+  def self.scrape_leagues
     
   end
   
+  def self.uk
+  doc = Nokogiri::HTML(open("https://www.premierleague.com/tables"))
+  top_team = doc.css("tr.tableDark").attribute("data-filtered-table-row-name").value
+  next_match =doc.css("tr.tableDark span.visuallyHidden").text
+  binding.pry
+  end
+  
+  def self.spain
 end
