@@ -38,4 +38,14 @@ class Footy::Standings
   end
   
   def self.spain
+    doc = Nokogiri::HTML(open("https://www.transfermarkt.us/primera-division/tabelle/wettbewerb/ES1/saison_id/2019"))
+    name = doc.css("div p")
+    teams = doc.css("td.no-border-links.hauptlink a")
+    top_team = teams.first.children.text
+    binding.pry
+  end
+  
+    
+    
+    
 end
