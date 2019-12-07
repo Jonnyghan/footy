@@ -24,11 +24,6 @@ class Footy::Standings
     [uk_standings,sp_standings,ger_standings]
   end
   
-  
-  def self.scrape_leagues
-    
-  end
-  
   def self.uk
   doc = Nokogiri::HTML(open("https://www.premierleague.com/tables"))
   top_team = doc.css("tr.tableDark").attribute("data-filtered-table-row-name").value

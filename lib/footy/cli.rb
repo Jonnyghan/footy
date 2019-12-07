@@ -24,6 +24,7 @@ class Footy::CLI
     if input.to_i > 0
     the_league = @standings[input.to_i-1]
       puts "#{the_league.name} - #{the_league.top_team}!"
+      puts "For more information about #{the_league.country}'s league table, please visit: #{the_league.url}"
     elsif input == "list"
       list_leagues
     else 
