@@ -4,23 +4,22 @@ class Footy::Standings
    
     uk_standings = self.new 
     uk_standings.country= "England"
-    uk_standings.name = "Premier League Standings"
+    uk_standings.name = "Premier League"
     uk_standings.top_team = "#{self.uk}"
     uk_standings.url = "https://www.premierleague.com/tables"
 
     sp_standings = self.new 
     sp_standings.country= "Spain"
-    sp_standings.name = "La Liga Standings"
+    sp_standings.name = "La Liga"
     sp_standings.top_team = "#{self.spain}"
     sp_standings.url = "https://www.laliga.com/en-US/laliga-santander/classification"
 
     ger_standings = self.new 
     ger_standings.country= "Germany"
-    ger_standings.name = "Bundesliga.1 Standings"
+    ger_standings.name = "Bundesliga.1"
     ger_standings.top_team = "#{self.ger}"
     ger_standings.url = "https://www.bundesliga.com/en/bundesliga/table"
 
-    
     [uk_standings,sp_standings,ger_standings]
   end
   

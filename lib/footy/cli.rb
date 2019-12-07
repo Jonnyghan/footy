@@ -23,8 +23,11 @@ class Footy::CLI
     input = gets.strip.downcase
     if input.to_i > 0
     the_league = @standings[input.to_i-1]
-      puts "#{the_league.name} - #{the_league.top_team}!"
-      puts "For more information about #{the_league.country}'s league table, please visit: #{the_league.url}"
+      puts "The #{the_league.name} leaders are: #{the_league.top_team.upcase}!\n\n"
+      
+      puts "Be sure to check on #{the_league.top_team} again at the end of the season!\n\n"
+      
+      puts "For more information about #{the_league.country}'s league table, please visit: #{the_league.url}\n\n"
     elsif input == "list"
       list_leagues
     else 
