@@ -9,16 +9,11 @@ class Footy::CLI
   end
   
   def list_leagues
-    puts "Big Six Football/Soccer Standings!"
-    puts <<-DOC.gsub /^\s*/, ''
-    
-    1. England: Premier League
-    2. Spain: La Liga
-    3. Germany: Bundesliga .1 
-    4. France: Ligue 1
-    5. Italy: Serie A
-    
-    DOC
+    puts "Big Three Football/Soccer Standings!"
+   @standings = Footy::Standings.today
+   @standings.each.with_index(1) do |league, i|
+     puts "#{i} - #{league.name}"
+   end 
   end
   
   def menu

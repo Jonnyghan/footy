@@ -1,15 +1,7 @@
 class Footy::Standings
   attr_accessor :name, :table, :top_team, :bottom_team, :url
   def self.today
-     puts <<-DOC.gsub /^\s*/, ''
-    
-    1. England: Premier League
-    2. Spain: La Liga
-    3. Germany: Bundesliga.1 
-    4. France: Ligue 1
-    5. Italy: Serie A
-    
-    DOC
+   
     uk_standings = self.new 
     uk_standings.name = "Premier League Standings"
     uk_standings.table =  "Table"
