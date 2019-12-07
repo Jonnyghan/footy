@@ -21,18 +21,10 @@ class Footy::CLI
     while input!= "exit"
     puts "Please select a League or type List for the list again:"
     input = gets.strip.downcase
-    case input
-    when "1"
-      puts "Premier League Standings:"
-    when "2"
-      puts "La Liga Standings:"
-    when "3"
-      puts "Bundesliga .1 Standings:"
-    when "4"
-      puts "Ligue 1 Standings:"
-    when "5"
-      puts "Serie A Standings:"
-    when "list"
+    if input.to_i > 0
+    the_league = @standings[input.to_i-1]
+      puts "#{the_league.name} - #{the_league.table}"
+    elsif input == "list"
       list_leagues
     else 
       puts "Pick a League please!"

@@ -28,4 +28,9 @@ class Footy::Standings
     [uk_standings,sp_standings,ger_standings]
   end
   
+  
+  def scrape_prem
+    
+  end
+  
 end
