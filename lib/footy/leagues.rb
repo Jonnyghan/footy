@@ -1,15 +1,14 @@
 #Organizer
 class Footy::Leagues
-  attr_accessor :name, :country, :top_team, :url, :current_champ
+  attr_accessor :name, :country, :top_team, :url
  
  @@all = [] 
 
- def initialize(name, country, top_team, url, current_champ)
+ def initialize(name, country, top_team, url)
    @name = name
    @country = country
    @top_team = top_team
    @url = url
-   @current_champ = current_champ
    @@all << self
  end
  

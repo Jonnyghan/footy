@@ -34,7 +34,6 @@ class Footy::Standings
     top_team = doc.css("td.team a").attribute("title").text
     top_team
     Footy::Leagues.new(league_name,country,top_team,@ger_url)
-    binding.pry
   end
     
   def self.all_leagues

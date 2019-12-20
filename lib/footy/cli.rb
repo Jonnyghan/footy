@@ -22,7 +22,7 @@ class Footy::CLI
   def menu
     input = nil
     while input!= "exit"
-    puts "Please select a League or type List for the list again:"
+    puts "Please select a League or type List for the leagues:"
     input = gets.strip.downcase
     if (1..3).include?(input.to_i) 
     the_league = @leagues[input.to_i-1]
@@ -33,8 +33,8 @@ class Footy::CLI
       puts "For more information about #{the_league.country}'s league table, please visit: #{the_league.url}\n\n"
     elsif input == "list"
       list_leagues
-    else 
-      puts "Pick a League please!"
+  #  else 
+  #    puts "Please select a league: 1-3 or type 'list' to list the leagues"
       end 
     end
   end
