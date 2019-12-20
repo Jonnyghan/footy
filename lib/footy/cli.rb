@@ -28,7 +28,7 @@ class Footy::CLI
     the_league = @leagues[input.to_i-1]
       puts "The #{the_league.name} leaders are: #{the_league.top_team.upcase}!\n\n"
       
-      puts "Be sure to check on #{the_league.top_team} again at the end of the season!\n\n"
+      puts "ATTENTION, ATENCIÓN, ACHTUNG! #{the_league.top_team} is on top for now BUT will they win \nthe league? Check back in May to see!\n\n"
       
       puts "For more information about #{the_league.country}'s league table, please visit: #{the_league.url}\n\n"
     elsif input == "list"

@@ -1,3 +1,4 @@
+#Scraper
 class Footy::Standings
 
  
@@ -28,11 +29,12 @@ class Footy::Standings
   
   def self.ger
     country  = "Germany"
-    league_name = "Bundesliga .1"
+    league_name = "1. Bundesliga "
     doc = Nokogiri::HTML(open(@ger_url))
     top_team = doc.css("td.team a").attribute("title").text
     top_team
-      Footy::Leagues.new(league_name,country,top_team,@ger_url)
+    Footy::Leagues.new(league_name,country,top_team,@ger_url)
+    binding.pry
   end
     
   def self.all_leagues
