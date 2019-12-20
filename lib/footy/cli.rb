@@ -11,7 +11,10 @@ class Footy::CLI
   
   def list_leagues
     puts "Big Three Football/Soccer League Top Clubs!!"
-    
+    @leagues=Footy::Leagues.all
+    @leagues.each_with_index do |league, i|
+    puts "#{i + 1}. #{league.country} - #{league.name}"
+    end 
   end
    
    
@@ -21,8 +24,8 @@ class Footy::CLI
     while input!= "exit"
     puts "Please select a League or type List for the list again:"
     input = gets.strip.downcase
-    if input.to_i > 0
-    the_league = @standings[input.to_i-1]
+    if (1..3).include?(input.to_i) 
+    the_league = @leagues[input.to_i-1]
       puts "The #{the_league.name} leaders are: #{the_league.top_team.upcase}!\n\n"
       
       puts "Be sure to check on #{the_league.top_team} again at the end of the season!\n\n"
