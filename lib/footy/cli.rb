@@ -10,7 +10,7 @@ class Footy::CLI
   
   def list_leagues
     puts "Big Three Football/Soccer League Top Clubs!!"
-   @standings = Footy::Standings.today
+   
    @standings.each.with_index(1) do |league, i|
      puts "#{i}) #{league.country}: #{league.name}"
    end 
