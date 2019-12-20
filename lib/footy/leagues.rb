@@ -1,4 +1,4 @@
-#Organizer
+  #Organizer
 class Footy::Leagues
   attr_accessor :name, :country, :top_team, :url
  
