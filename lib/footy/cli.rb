@@ -2,7 +2,8 @@
 
 class Footy::CLI
   
-  def call
+  def start 
+    Footy::Standings.all_leagues
     list_leagues
     menu
     goodbye
@@ -10,11 +11,10 @@ class Footy::CLI
   
   def list_leagues
     puts "Big Three Football/Soccer League Top Clubs!!"
-   
-   @standings.each.with_index(1) do |league, i|
-     puts "#{i}) #{league.country}: #{league.name}"
-   end 
+    
   end
+   
+   
   
   def menu
     input = nil

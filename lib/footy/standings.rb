@@ -35,5 +35,11 @@ class Footy::Standings
       Footy::Leagues.new(league_name,country,top_team,@ger_url)
   end
     
+  def self.all_leagues
+      self.uk
+      self.spain 
+      self.ger
+  end
+     
     
 end

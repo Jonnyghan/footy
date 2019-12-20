@@ -4,4 +4,4 @@
 require "./lib/footy"
 
 
-Footy::CLI.new.call
+Footy::CLI.start.call
